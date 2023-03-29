@@ -64,9 +64,9 @@
 * `.kobo/dict` 預設字典檔的位置，放這裡應該會覆蓋掉預設的字典。
 * `.kobo/custom-dict` 客製化的字典檔，到時候看到的字典名字後面會有**客製化**的字樣。
 
-檔名需改成正確的格式 (dicthtml-xx-xx 或 dicthtml-xx)， **xx** 使用 ISO 639-1 碼。
-
-亂取名的話，好像就是出現原始檔名。
+檔名需改成正確的格式，例如 dicthtml-xx-xx 或 dicthtml-xx 。  
+**xx** 使用 ISO 639-1 碼（繁中為 TW，簡中為 CN），亂打的話，會直接出現原始檔名，例如： dicthtml-kk.zip 。  
+另外如果連 dicthtml 都沒有，則是會讀取不到。
 
 <br>
 
