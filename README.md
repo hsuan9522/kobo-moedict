@@ -1,4 +1,4 @@
-# kobo-moedict（kobo 萌典）
+# kobo-moedict（Kobo 萌典）
 
 
 ### 來源：
@@ -49,11 +49,24 @@
 
 <br>
 
-### kobo 專用字典檔：
+### Kobo 專用字典檔：
 
 * 教育部重編國語辭典 [*here*](https://github.com/hsuan9522/kobo-moedict/blob/master/onlyTradition/dicthtml-TW.zip)
 
 * 繁簡體字典 [*here*](https://github.com/hsuan9522/kobo-moedict/blob/master/tranditionNsimple/dicthtml-TW.zip)
+
+<br>
+
+### 如何放進 Kobo
+
+> 載完後，直接丟入 .kobo/dict 或 .kobo/custom-dict 即可。
+
+* `.kobo/dict` 預設字典檔的位置，放這裡應該會覆蓋掉預設的字典。
+* `.kobo/custom-dict` 客製化的字典檔，到時候看到的字典名字後面會有**客製化**的字樣。
+
+檔名需改成正確的格式 (dicthtml-xx-xx 或 dicthtml-xx)， **xx** 使用 ISO 639-1 碼。
+
+亂取名的話，好像就是出現原始檔名。
 
 <br>
 
