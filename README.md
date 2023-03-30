@@ -7,7 +7,8 @@
 
 > 上述兩本字典皆含詞語，最後取用的方式皆以先將兩本字典都篩選出只有“單”字的部分。
 
-* csv 轉成 kobo dict [penelope](https://github.com/pettarin/penelope)
+* csv 轉成 kobo dict [penelope](https://github.com/pettarin/penelope)  
+（這個專案已被封存，但我會持續使用它來轉檔，哪天用不了，再想辦法）
 
 ### 資料夾結構
 ```
@@ -61,7 +62,7 @@
 
 > 載完後，直接丟入 .kobo/dict 或 .kobo/custom-dict 即可。
 
-* `.kobo/dict` 預設字典檔的位置，放這裡應該會覆蓋掉預設的字典。
+* `.kobo/dict` 預設字典檔的位置，放這裡會覆蓋掉預設的字典。
 * `.kobo/custom-dict` 客製化的字典檔，到時候看到的字典名字後面會有**客製化**的字樣。
 
 檔名需改成正確的格式，例如 dicthtml-xx-xx 或 dicthtml-xx 。  
