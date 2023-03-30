@@ -70,6 +70,11 @@
 
 <br>
 
+### 補充說明
+沒有經過特殊設置的 kobo 裝置，是無法看到**注音符號**的，有需求的話，請移駕到另一篇[文章](https://medium.com/@hsuan9522/kobo-reader-plugin-300eda218441)，找到第三點的 **Kobopatch** 把對應 `改字典字體功能`（Dictionary text font-family/font-size/line-height）打開且選擇 `AR UDJingxihei` 這個字體，最後安裝即可。
+
+<br>
+
 ---
 
 字典如果有發現錯誤，歡迎回報。
