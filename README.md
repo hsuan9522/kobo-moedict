@@ -66,8 +66,8 @@
 * `.kobo/custom-dict` 客製化的字典檔，到時候看到的字典名字後面會有**客製化**的字樣。
 
 檔名需改成正確的格式，例如 dicthtml-xx-xx 或 dicthtml-xx 。  
-**xx** 使用 ISO 639-1 碼（繁中為 TW，簡中為 CN），亂打的話，會直接出現原始檔名，例如： dicthtml-kk.zip 。  
-另外如果連 dicthtml 都沒有，則是會讀取不到。
+**xx** 使用 [ISO 639-1 碼](https://zh.wikipedia.org/zh-tw/ISO_639-1) （繁中為 zh-TW or TW，簡中為 zh-CN or CN），亂打的話，會直接出現原始檔名，例如： dicthtml-kk.zip 。  
+※ 如果連沒有按照上面的規則，則是會讀取不到 。
 
 <br>
 
