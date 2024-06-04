@@ -46,7 +46,7 @@
 
 最後將 A + B + C' 合起來為字典。
 
-因為比對較為複製，除了由程式篩選外，還加了少許人工步驟，需要的就小心服用。
+因為比對較為複雜，除了由程式篩選外，還加了少許人工檢查，因此若遇到錯誤，可以回報修正。
 
 <br>
 
@@ -72,7 +72,7 @@
 <br>
 
 ### 補充說明
-沒有經過特殊設置的 kobo 裝置，是無法看到**注音符號**的，有需求的話，請移駕到另一篇[文章](https://medium.com/@hsuan9522/kobo-reader-plugin-300eda218441)，找到第三點的 **Kobopatch** 把對應 `改字典字體功能`（Dictionary text font-family/font-size/line-height）打開且選擇 `AR UDJingxihei` 這個字體，最後安裝即可。
+沒有經過特殊設置的 kobo 裝置，是無法看到**注音符號**的，有需求的話，請到另一篇[文章](https://medium.com/@hsuan9522/kobo-reader-plugin-300eda218441)，找到第三點的 **Kobopatch** 把對應 `改字典字體功能`（Dictionary text font-family/font-size/line-height）打開且選擇 `AR UDJingxihei` 這個字體，最後安裝即可。
 
 <br>
 
