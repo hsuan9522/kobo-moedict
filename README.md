@@ -54,7 +54,7 @@
 
 * 教育部重編國語辭典 [*here*](https://github.com/hsuan9522/kobo-moedict/blob/master/onlyTradition/dicthtml-TW.zip)
 
-* 繁簡體字典 [*here*](https://github.com/hsuan9522/kobo-moedict/blob/master/tranditionNsimple/dicthtml-TW.zip)
+* 繁+簡體字典 [*here*](https://github.com/hsuan9522/kobo-moedict/blob/master/tranditionNsimple/dicthtml-TW.zip)
 
 <br>
 
