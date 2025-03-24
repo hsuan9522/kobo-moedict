@@ -70,7 +70,7 @@
 
 * 教育部重編國語辭典 [*注音版*](https://github.com/hsuan9522/kobo-moedict/blob/master/dictionary/tranditional/dicthtml-TW.zip)
 
-* 繁+簡體字典 [*注音版*](https://github.com/hsuan9522/kobo-moedict/blob/master/dictionary/dicthtml-TW.zip) [*拼音版*](https://github.com/hsuan9522/kobo-moedict/blob/master/dictionary/dicthtml-CN.zip)
+* 繁+簡體字典 [*注音版*](https://raw.githubusercontent.com/hsuan9522/kobo-moedict/master/dictionary/dicthtml-TW.zip) [*拼音版*](https://raw.githubusercontent.com/hsuan9522/kobo-moedict/master/dictionary/dicthtml-CN.zip)
 
 <br>
 
