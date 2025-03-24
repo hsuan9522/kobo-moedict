@@ -12,14 +12,15 @@
 
 ### 資料夾結構
 ```
-├── onlyTradition // 教育部重編國語辭典
-│   ├── @all.csv // 用來轉成 kobo dict 的 csv
-│   ├── dicthtml-TW.zip // kobo 專用字典檔
-│  
-├── onlyTradition // 繁+簡字典
-│   ├── @all.csv // 用來轉成 kobo dict 的 csv
-│   ├── dicthtml-TW.zip // kobo 專用字典檔
-│  
+├── dictionary
+│   ├── traditional
+│   │   ├── dicthtml-TW.zip  // 繁 - 注音
+│   ├── dicthtml-TW.zip      // 繁+簡 - 注音
+│   ├── dicthtml-TW.zip      // 繁+簡 - 拼音
+│
+├── format // 轉換程式
+│   ├── ...
+│ 
 ├── README.md
 ```
 
@@ -27,7 +28,7 @@
 ### 繁體字典：
 > 由 **教育部重編國語辭典** 轉成。
 
-直接拿國語辭典的 json 轉成 csv，唯一變動的只有“無讀音”的異體字。
+直接拿國語辭典的 json 轉成 csv，唯一變動的只有「無讀音」的異體字。
 
 變動的方式是去提取「」裡的字（`「幾」的異體字。` ），再將此字與剩餘的字匹配，以括號裡為例，拿出 `幾`，找出所有**幾**的讀音，以斜線分格，組成注音 `ㄐㄧ/ㄐㄧˇ`。
 
