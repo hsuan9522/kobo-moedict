@@ -215,7 +215,7 @@ function escapeCsvField(field) {
     return field
 }
 
-const dictFormat = getData(process.argv[3])
+const dictFormat = getData(process.argv[2])
 
 function save(type) {
     if (type === 'csv') {
