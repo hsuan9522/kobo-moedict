@@ -7,7 +7,7 @@
 
 > 上述兩本字典皆含詞語，最後取用的方式皆以先將兩本字典都篩選出只有“單”字的部分。
 
-* csv 轉成 kobo dict [pyglossary](https://github.com/ilius/pyglossary)  
+* csv 轉成 kobo dict 工具 [pyglossary](https://github.com/ilius/pyglossary)  
 
 
 ### 資料夾結構
@@ -66,9 +66,9 @@
 
 ### Kobo 專用字典檔：
 
-* 教育部重編國語辭典 [*here*](https://github.com/hsuan9522/kobo-moedict/blob/master/onlyTradition/dicthtml-TW.zip)
+* 教育部重編國語辭典 [*注音版*](https://github.com/hsuan9522/kobo-moedict/blob/master/dictionary/tranditional/dicthtml-TW.zip)
 
-* 繁+簡體字典 [*here*](https://github.com/hsuan9522/kobo-moedict/blob/master/tranditionNsimple/dicthtml-TW.zip)
+* 繁+簡體字典 [*注音版*](https://github.com/hsuan9522/kobo-moedict/blob/master/dictionary/dicthtml-TW.zip) [*拼音版*](https://github.com/hsuan9522/kobo-moedict/blob/master/dictionary/dicthtml-CN.zip)
 
 <br>
 
