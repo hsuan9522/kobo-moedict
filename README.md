@@ -1,5 +1,30 @@
 # kobo-moedict（Kobo 萌典）
 
+### Kobo 專用字典檔：
+
+* 教育部重編國語辭典 [*注音版*](https://github.com/hsuan9522/kobo-moedict/blob/master/dictionary/tranditional/dicthtml-TW.zip)
+
+* 繁+簡體字典 [*注音版*](https://raw.githubusercontent.com/hsuan9522/kobo-moedict/master/dictionary/dicthtml-TW.zip) [*拼音版*](https://raw.githubusercontent.com/hsuan9522/kobo-moedict/master/dictionary/dicthtml-CN.zip)
+
+
+### 如何放進 Kobo
+
+> 載完後，直接丟入 .kobo/dict 或 .kobo/custom-dict 即可。
+
+* `.kobo/dict` 預設字典檔的位置，放這裡會覆蓋掉預設的字典。
+* `.kobo/custom-dict` 客製化的字典檔，看到的字典名字後面會有**客製化**的字樣。
+
+檔名需改成正確的格式，例如 dicthtml-**xx-xx** 或 dicthtml-**xx** 。  
+**xx** 使用 [ISO 639-1 碼](https://zh.wikipedia.org/zh-tw/ISO_639-1) （繁中為 zh-TW or TW，簡中為 zh-CN or CN），亂打的話會直接出現原始檔名，例如： dicthtml-kk.zip 。  
+※ 如果沒有按照規則，則會讀取不到 。
+
+
+### 注意事項
+沒有經過特殊設置的 kobo 裝置是無法看到**注音符號**，設置方式，請到[文章](https://medium.com/@hsuan9522/kobo-reader-plugin-300eda218441)，找到第三點的 **Kobopatch** 把對應 `改字典字體功能`（Dictionary text font-family/font-size/line-height）打開且選擇 `AR UDJingxihei` 字體，安裝完後即可看到注音。
+
+<br>
+
+## 專案介紹
 
 ### 來源：
 * 唐鳳的 [萌典](https://github.com/g0v/moedict-webkit)
@@ -67,29 +92,7 @@
 ```
 <br>
 
-### Kobo 專用字典檔：
 
-* 教育部重編國語辭典 [*注音版*](https://github.com/hsuan9522/kobo-moedict/blob/master/dictionary/tranditional/dicthtml-TW.zip)
-
-* 繁+簡體字典 [*注音版*](https://raw.githubusercontent.com/hsuan9522/kobo-moedict/master/dictionary/dicthtml-TW.zip) [*拼音版*](https://raw.githubusercontent.com/hsuan9522/kobo-moedict/master/dictionary/dicthtml-CN.zip)
-
-<br>
-
-### 如何放進 Kobo
-
-> 載完後，直接丟入 .kobo/dict 或 .kobo/custom-dict 即可。
-
-* `.kobo/dict` 預設字典檔的位置，放這裡會覆蓋掉預設的字典。
-* `.kobo/custom-dict` 客製化的字典檔，到時候看到的字典名字後面會有**客製化**的字樣。
-
-檔名需改成正確的格式，例如 dicthtml-xx-xx 或 dicthtml-xx 。  
-**xx** 使用 [ISO 639-1 碼](https://zh.wikipedia.org/zh-tw/ISO_639-1) （繁中為 zh-TW or TW，簡中為 zh-CN or CN），亂打的話，會直接出現原始檔名，例如： dicthtml-kk.zip 。  
-※ 如果沒有按照上面的規則，則會讀取不到 。
-
-<br>
-
-### 補充說明
-沒有經過特殊設置的 kobo 裝置，是無法看到**注音符號**的，有需求的話，請到另一篇[文章](https://medium.com/@hsuan9522/kobo-reader-plugin-300eda218441)，找到第三點的 **Kobopatch** 把對應 `改字典字體功能`（Dictionary text font-family/font-size/line-height）打開且選擇 `AR UDJingxihei` 這個字體，最後安裝即可。
 
 <br>
 
