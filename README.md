@@ -7,7 +7,7 @@
 * 繁+簡體字典 [*注音版*](https://raw.githubusercontent.com/hsuan9522/kobo-moedict/master/dictionary/dicthtml-TW.zip) [*拼音版*](https://raw.githubusercontent.com/hsuan9522/kobo-moedict/master/dictionary/dicthtml-CN.zip)
 
 
-### 如何放進 Kobo
+### 如何放進 Kobo：
 
 > 載完後，直接丟入 .kobo/dict 或 .kobo/custom-dict 即可。
 
@@ -19,7 +19,7 @@
 ※ 如果沒有按照規則，則會讀取不到 。
 
 
-### 注意事項
+### 注意事項：
 沒有經過特殊設置的 kobo 裝置是無法看到**注音符號**，設置方式，請到[文章](https://medium.com/@hsuan9522/kobo-reader-plugin-300eda218441)，找到第三點的 **Kobopatch** 把對應 `改字典字體功能`（Dictionary text font-family/font-size/line-height）打開且選擇 `AR UDJingxihei` 字體，安裝完後即可看到注音。
 
 <br>
@@ -35,7 +35,7 @@
 * csv 轉成 kobo dict 工具 [pyglossary](https://github.com/ilius/pyglossary)  
 
 
-### 資料夾結構
+### 資料夾結構：
 ```
 ├── dictionary
 │   ├── traditional
