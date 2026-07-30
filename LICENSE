@@ -1,3 +1,14 @@
+Licensing notice
+
+This MIT License applies only to the original software and source code in this
+repository, including the conversion scripts under the format/ directory.
+
+It does not apply to dictionary source data or generated dictionary packages
+under the dictionary/ directory. Those materials retain the licenses and
+attribution requirements of their respective sources. See DATA_LICENSE.md and
+THIRD_PARTY_NOTICES.md for details.
+
+
 MIT License
 
 Copyright (c) 2024 Hsuan
