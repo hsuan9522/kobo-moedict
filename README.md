@@ -1,104 +1,161 @@
 # kobo-moedict（Kobo 萌典）
 
-### Kobo 專用字典檔：
+專為 Kobo 閱讀器製作的中文單字字典，內容取自教育部《重編國語辭典修訂本》與萌典資料，並轉換成 Kobo 可讀取的字典格式。
 
-* 教育部重編國語辭典 [*注音版*](https://github.com/hsuan9522/kobo-moedict/blob/master/dictionary/tranditional/dicthtml-TW.zip)
+## 下載字典
 
-* 繁+簡體字典 [*注音版*](https://raw.githubusercontent.com/hsuan9522/kobo-moedict/master/dictionary/dicthtml-TW.zip) [*拼音版*](https://raw.githubusercontent.com/hsuan9522/kobo-moedict/master/dictionary/dicthtml-CN.zip)
+### 教育部重編國語辭典
 
+- [繁體注音版](https://github.com/hsuan9522/kobo-moedict/blob/master/dictionary/tranditional/dicthtml-TW.zip)
 
-### 如何放進 Kobo：
+### 繁體＋簡體字典
 
-> 載完後，直接丟入 .kobo/dict 或 .kobo/custom-dict 即可。
+- [注音版](https://raw.githubusercontent.com/hsuan9522/kobo-moedict/master/dictionary/dicthtml-TW.zip)
+- [拼音版](https://raw.githubusercontent.com/hsuan9522/kobo-moedict/master/dictionary/dicthtml-CN.zip)
 
-* `.kobo/dict` 預設字典檔的位置，放這裡會覆蓋掉預設的字典。
-* `.kobo/custom-dict` 客製化的字典檔，看到的字典名字後面會有**客製化**的字樣。
+## 安裝方式
 
-檔名需改成正確的格式，例如 dicthtml-**xx-xx** 或 dicthtml-**xx** 。  
-**xx** 使用 [ISO 639-1 碼](https://zh.wikipedia.org/zh-tw/ISO_639-1) （繁中為 zh-TW or TW，簡中為 zh-CN or CN），亂打的話會直接出現原始檔名，例如： dicthtml-kk.zip 。  
-※ 如果沒有按照規則，則會讀取不到 。
+下載字典檔後，將 ZIP 檔放入 Kobo 的下列其中一個目錄：
 
-
-### 注意事項：
-沒有經過特殊設置的 kobo 裝置是無法看到**注音符號**，設置方式，請到[文章](https://medium.com/@hsuan9522/kobo-reader-plugin-300eda218441)，找到第三點的 **Kobopatch** 把對應 `改字典字體功能`（Dictionary text font-family/font-size/line-height）打開且選擇 `AR UDJingxihei` 字體，安裝完後即可看到注音。
-
-<br>
-
-## 專案介紹
-
-### 來源：
-* 唐鳳的 [萌典](https://github.com/g0v/moedict-webkit)
-* 教育部重編國語辭典 [資料檔](https://github.com/g0v/moedict-data)
-
-> 上述兩本字典皆含詞語，最後取用的方式皆以先將兩本字典都篩選出只有「單」字的部分。
-
-* csv 轉成 kobo dict 工具 [pyglossary](https://github.com/ilius/pyglossary)  
-
-
-### 資料夾結構：
-```
-├── dictionary
-│   ├── traditional
-│   │   ├── dicthtml-TW.zip  // 繁 - 注音
-│   ├── dicthtml-TW.zip      // 繁+簡 - 注音
-│   ├── dicthtml-TW.zip      // 繁+簡 - 拼音
-│
-├── format // 轉換程式
-│   ├── ...
-│ 
-├── README.md
+```text
+.kobo/dict
 ```
 
+或：
 
-### 繁體字典：
-> 由 **教育部重編國語辭典** 轉成。
+```text
+.kobo/custom-dict
+```
 
-直接拿國語辭典的 json 轉成 csv，唯一變動的只有「無讀音」的異體字。
+兩個目錄的差異：
 
-變動的方式是去提取「」裡的字（`「幾」的異體字。` ），再將此字與剩餘的字匹配，以括號裡為例，拿出 `幾`，找出所有**幾**的讀音，以斜線分格，組成注音 `ㄐㄧ/ㄐㄧˇ`。
+- `.kobo/dict`：Kobo 預設字典位置，放入同名字典可能會覆蓋原有字典。
+- `.kobo/custom-dict`：自訂字典位置，字典名稱後方會顯示「客製化」。
 
-此字典檔因為沒有做過多餘比對，基本上不會有錯誤。
+字典檔名必須符合 Kobo 的命名規則，例如：
 
-<br>
+```text
+dicthtml-xx.zip
+dicthtml-xx-xx.zip
+```
 
-### 繁體+簡體字典：
-> 由 **教育部重編國語辭典**（c.txt） 和 **萌典簡體字典**（dict-revised.json）組成。 
+其中 `xx` 為 [ISO 639-1 語言代碼](https://zh.wikipedia.org/zh-tw/ISO_639-1)，例如：
 
-將教育部重編國語辭典，先拆出「無讀音」的異體字的部分（代號 s，因為發現裡面有很多簡體字），和剩餘部分（代號 A）和萌典裡的簡體字典（代號 c，c.txt）。
+- 繁體中文：`TW` 或 `zh-TW`
+- 簡體中文：`CN` 或 `zh-CN`
 
-拿 s 與 c 比對，取出只有在 s 裡的字成 B。
+若使用其他代碼，Kobo 會直接顯示原始檔名，例如 `dicthtml-kk.zip`。檔名格式不正確時，Kobo 也可能無法讀取字典。
 
-拿 c 裡對應的繁體字與 A 比對，不在 A 裡的組成 C1。如果這個字在 A 裡，且簡繁不同，則取第一個匹配到的繁體解釋組成 C2。簡繁如果相同，只會把這個字記錄下來，後續直接顯示在多繁的結果中。
+## 注音顯示
 
-最後將 A + B + C1 + C2 合起來為字典。
+未經設定的 Kobo 無法正常顯示注音符號。
 
-查找輸出如下：找「卜」字，﹝﹞內會為多繁的結果。
+請參考[這篇文章](https://medium.com/@hsuan9522/kobo-reader-plugin-300eda218441)的第三部分，透過 Kobopatch 啟用：
+
+```text
+Dictionary text font-family/font-size/line-height
+```
+
+並將字型設定為：
+
+```text
+AR UDJingxihei
+```
+
+## 資料來源
+
+本專案使用以下資料與工具：
+
+- 唐鳳的[萌典](https://github.com/g0v/moedict-webkit)
+- 教育部《重編國語辭典修訂本》[資料檔](https://github.com/g0v/moedict-data)
+- 字典格式轉換工具 [PyGlossary](https://github.com/ilius/pyglossary)
+
+原始字典包含單字與詞語；本專案會先篩選出單字資料，再轉換為 Kobo 字典格式。
+
+## 字典整理方式
+
+### 繁體字典
+
+繁體字典由教育部《重編國語辭典修訂本》轉換而成。
+
+處理時會將原始 JSON 轉為 CSV。對於沒有獨立讀音的異體字，程式會從解釋中的「某字的異體字」資訊找出對應正字，再取得該字的讀音。
+
+例如：
+
+```text
+「幾」的異體字。
+```
+
+程式會找出「幾」的所有讀音，並以斜線分隔：
+
+```text
+ㄐㄧ/ㄐㄧˇ
+```
+
+### 繁體＋簡體字典
+
+繁體＋簡體字典由下列資料組成：
+
+- 教育部《重編國語辭典修訂本》
+- 萌典簡體字典
+
+處理流程如下：
+
+1. 將教育部字典分為一般繁體資料與無獨立讀音的異體字資料。
+2. 將異體字資料與萌典簡體資料比對。
+3. 保留只出現在異體字資料中的字。
+4. 以簡體字對應的繁體字和教育部字典比對。
+5. 將缺少的簡體字與對應解釋合併。
+6. 產生注音版與拼音版 Kobo 字典。
+
+查詢「卜」字時，輸出格式大致如下：
+
 ```html
 卜,﹝蔔﹞﹝卜﹞
-<font color='#f00'>ㄅㄨˇ</font><br>
+<font color="#f00">ㄅㄨˇ</font><br>
 [名]<br>
-1.古人灼燒龜甲或牛骨，辨視其裂紋以推斷事情吉凶的行為。如：「占卜」、「龜卜」。<br>
-2.泛指一般預測吉凶的方法。如：「卜卦」。清．王漁洋〈灞橋寄內〉詩二首之二：「閨中若問金錢卜，秋雨秋風過灞橋。」<br>
-3.掌管問卜之事的人。《楚辭．屈原．卜居》：「心煩慮亂，不知所從，往見太卜鄭詹尹。」《禮記．王制》：「凡執技以事上者，祝史射御醫卜及百工。」<br>
-4.古劇角色名稱。飾演老婦人，如今戲中的老旦。如：「卜兒」。《永樂大典戲文三種．宦門子弟錯立身．第五出》：「（末卜商量介）萬事不由人計較，一生都是命安排。」<br>
-5.姓。如春秋時衛國有卜商，清代有卜舜牟。<br>
-6.二一四部首之一。<br>
-<br>
-[動]<br>
-1.灼龜占卦。《左傳．僖公四年》：「初，晉獻公欲以驪姬為夫人，卜之不吉。」<br>
-2.預料、事先推斷。如：「未卜先知」、「勝敗可卜」。《史記．卷六五．孫子吳起傳》：「試延以公主，起有留心則必受之，無留心則必辭矣。以此卜之。」<br>
-3.選擇。如：「卜居」、「卜鄰」。《左傳．昭公三年》：「非宅是卜，唯鄰是卜。」宋．陸游〈呂從事夫人方氏墓誌銘〉：「以潦水齧墓趾，改卜於舊墓少東二百步。」
-
+1. 古人灼燒龜甲或牛骨，辨視其裂紋以推斷事情吉凶的行為。<br>
+2. 泛指一般預測吉凶的方法。<br>
 ```
-<br>
+
+其中 `﹝﹞` 內會顯示對應的繁體字。
+
+## 專案結構
+
+```text
+kobo-moedict/
+├── dictionary/
+│   ├── tranditional/
+│   │   └── dicthtml-TW.zip    # 教育部字典，繁體注音版
+│   ├── dicthtml-TW.zip        # 繁體＋簡體，注音版
+│   └── dicthtml-CN.zip        # 繁體＋簡體，拼音版
+├── format/                    # 字典資料處理與轉換程式
+├── DATA_LICENSE.md            # 字典資料授權
+├── THIRD_PARTY_NOTICES.md     # 第三方來源與授權
+├── LICENSE                    # 原創程式碼的 MIT License
+└── README.md
+```
 
 
+## 授權
 
-<br>
+本專案採分離授權：
 
----
+- `format/` 內的原創轉換程式使用 [MIT License](LICENSE)。
+- `dictionary/` 內的字典內容及產出的字典檔不適用 MIT，仍依原始資料來源的授權條款提供。
+- 教育部《重編國語辭典修訂本》文字資料的著作權仍屬教育部，依 CC BY-ND 3.0 Taiwan 提供。
+- 教育部的授權說明允許格式轉換及後續應用，但不因此將原始文字內容改授權為 MIT。
+- 完整授權範圍、姓名標示與第三方來源請參閱 [DATA_LICENSE.md](DATA_LICENSE.md) 與 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
-字典如果有發現錯誤，歡迎回報。
+## 問題回報
 
-<a href="https://www.buymeacoffee.com/hsuan" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 165px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+如果發現字典內容、讀音或轉換結果有誤，歡迎透過 GitHub Issues 回報。
 
+<a href="https://www.buymeacoffee.com/hsuan">
+  <img
+    src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+    alt="Buy Me A Coffee"
+    height="41"
+    width="165"
+  >
+</a>
