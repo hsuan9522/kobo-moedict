@@ -1,6 +1,6 @@
 const fs = require('fs')
-const all = require('./data/dict-revised.json')
-const allSimple = require('./data/c.json')
+const all = require('../data/dict-revised.json')
+const allSimple = require('../data/c.json')
 
 // 教育部那份 json 檔案 format，刪除沒有其他意思，只是異體字的字
 let { traditional, special } = all
