@@ -129,7 +129,9 @@ kobo-moedict/
 │   │   └── dicthtml-TW.zip    # 教育部字典，繁體注音版
 │   ├── dicthtml-TW.zip        # 繁體＋簡體，注音版
 │   └── dicthtml-CN.zip        # 繁體＋簡體，拼音版
-├── format/                    # 字典資料處理與轉換程式
+├── data/                      # 來源
+├── format/                    # 轉換程式
+├── output/                    # 產出                     
 ├── DATA_LICENSE.md            # 字典資料授權
 ├── THIRD_PARTY_NOTICES.md     # 第三方來源與授權
 ├── LICENSE                    # 原創程式碼的 MIT License

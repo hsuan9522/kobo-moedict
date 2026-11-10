@@ -13,7 +13,7 @@ if [ -f "$RENAMED_FILE" ]; then
     rm "$RENAMED_FILE"
 fi
 
-node ./parse.js "$TYPE"
+node ./foramt/parse.js "$TYPE"
 
 pyglossary ./output/dictionary.csv "$OUTPUT_FILE"
 
