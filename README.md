@@ -50,7 +50,7 @@ dicthtml-xx-xx.zip
 
 未經設定的 Kobo 無法正常顯示注音符號。
 
-請參考[這篇文章](https://medium.com/@hsuan9522/kobo-reader-plugin-300eda218441)的第三部分，透過 Kobopatch 啟用：
+請參考[這篇文章](https://kobo.cjhsuan.com/tools/dictionary)的第四步驟，透過 Kobopatch 啟用：
 
 ```text
 Dictionary text font-family/font-size/line-height
