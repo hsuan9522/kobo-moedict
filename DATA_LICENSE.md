@@ -5,6 +5,10 @@
 
 MIT License 不適用於 `dictionary/` 內的字典內容及產出的字典檔。
 
+`data/` 的原始辭典及 `reading-orders.json` 讀音編號對照亦屬來源資料，
+不適用 MIT。讀音編號取自教育部原始 Excel 的「多音排序」，來源與檔案
+SHA-256 記錄於 `data/reading-orders-source.json`。
+
 ## 教育部字典資料
 
 本專案的字典檔包含教育部《重編國語辭典修訂本》的內容，辭典本文之著作權

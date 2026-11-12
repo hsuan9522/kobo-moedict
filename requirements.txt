@@ -1,0 +1,2 @@
+pyglossary==5.0.8
+marisa-trie==1.2.1

@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/g0v/moedict-data/blob/main/dict_revised/dict_revised_1.xlsx",
+  "sha256": "df94ae4384ae3f33f573ded5c2f142041ea7530d381a285163593d6252ea4a9a",
+  "columns": {
+    "title": "A",
+    "order": "H",
+    "bopomofo": "I",
+    "pinyin": "L"
+  }
+}

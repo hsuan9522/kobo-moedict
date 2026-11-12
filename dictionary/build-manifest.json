@@ -1,0 +1,96 @@
+{
+  "tools": {
+    "pyglossary": "5.0.8",
+    "marisa-trie": "1.2.1"
+  },
+  "versions": [
+    {
+      "id": "traditional-bpmf",
+      "label": "純繁體－注音",
+      "entries": 11327,
+      "file": "dictionary/tranditional/dicthtml-TW.zip",
+      "bytes": 8255072,
+      "sha256": "e770b9b7f667dbc4713df38310149d1b8e8f2abd47cec6cae2faa0f1e2095fa3",
+      "sources": [
+        {
+          "name": "primary",
+          "path": "data\\dict-revised.json",
+          "sha256": "ad43e8e2d30341f2c2458e04fb05a3fc1b1cd486fb52eb8708d89bcfbe46530f"
+        },
+        {
+          "name": "readingOrders",
+          "path": "data\\reading-orders.json",
+          "sha256": "2dcebd532bb53abebbbed797d5cfd900f3b8b42334b2c0f4f0d7453564d24491"
+        }
+      ],
+      "validation": {
+        "entries": 11327,
+        "bytes": 8255072,
+        "checked_entries": 11327,
+        "status": "passed"
+      }
+    },
+    {
+      "id": "combined-bpmf",
+      "label": "繁體＋簡體－注音",
+      "entries": 15228,
+      "file": "dictionary/dicthtml-TW.zip",
+      "bytes": 10847386,
+      "sha256": "3a82bac0ed9f8b23e6ed92f4e9d3611969a51e18d56dda64e04fd13b85e68e5b",
+      "sources": [
+        {
+          "name": "primary",
+          "path": "data\\dict-revised.json",
+          "sha256": "ad43e8e2d30341f2c2458e04fb05a3fc1b1cd486fb52eb8708d89bcfbe46530f"
+        },
+        {
+          "name": "auxiliary",
+          "path": "data\\dict-csld.json",
+          "sha256": "0d7593875cc7aa8de35bec446d194d076969c15ee97574c31d0f2504ca50d471"
+        },
+        {
+          "name": "readingOrders",
+          "path": "data\\reading-orders.json",
+          "sha256": "2dcebd532bb53abebbbed797d5cfd900f3b8b42334b2c0f4f0d7453564d24491"
+        }
+      ],
+      "validation": {
+        "entries": 15228,
+        "bytes": 10847386,
+        "checked_entries": 15228,
+        "status": "passed"
+      }
+    },
+    {
+      "id": "combined-pinyin",
+      "label": "繁體＋簡體－拼音",
+      "entries": 15228,
+      "file": "dictionary/dicthtml-CN.zip",
+      "bytes": 10775193,
+      "sha256": "10c3eb286a54613b857b6078078a6fb41df9997f0ec1aea4d94e599a22d9d0e0",
+      "sources": [
+        {
+          "name": "primary",
+          "path": "data\\dict-revised.json",
+          "sha256": "ad43e8e2d30341f2c2458e04fb05a3fc1b1cd486fb52eb8708d89bcfbe46530f"
+        },
+        {
+          "name": "auxiliary",
+          "path": "data\\dict-csld.json",
+          "sha256": "0d7593875cc7aa8de35bec446d194d076969c15ee97574c31d0f2504ca50d471"
+        },
+        {
+          "name": "readingOrders",
+          "path": "data\\reading-orders.json",
+          "sha256": "2dcebd532bb53abebbbed797d5cfd900f3b8b42334b2c0f4f0d7453564d24491"
+        }
+      ],
+      "validation": {
+        "entries": 15228,
+        "bytes": 10775193,
+        "checked_entries": 15228,
+        "status": "passed"
+      }
+    }
+  ]
+}

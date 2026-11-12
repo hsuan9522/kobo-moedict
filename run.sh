@@ -1,25 +1,15 @@
-#!/bin/bash
-if [ $1 == "cn" ]; then
-    TYPE="pinyin"
-    NATION="CN"
-else
-    TYPE="bpmf"
-    NATION="TW"
+#!/usr/bin/env bash
+set -euo pipefail
+cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
+if [ "$#" -gt 1 ]; then
+    echo "用法：bash run.sh [all|traditional-bpmf|combined-bpmf|combined-pinyin]" >&2
+    exit 1
 fi
-
-OUTPUT_FILE="./output/dict.kobo.zip"
-RENAMED_FILE="./output/dicthtml-$NATION.zip"
-if [ -f "$RENAMED_FILE" ]; then
-    rm "$RENAMED_FILE"
-fi
-
-node ./format/parse.js "$TYPE"
-
-pyglossary ./output/dictionary.csv "$OUTPUT_FILE"
-
-if [ -f "$OUTPUT_FILE" ]; then
-    mv "$OUTPUT_FILE" "$RENAMED_FILE"
-    echo "✅ 檔案已重新命名為 $RENAMED_FILE"
-else
-    echo "⚠️  找不到 $OUTPUT_FILE，無法重新命名"
-fi
+VERSION="${1:-all}"
+case "$VERSION" in
+    cn) VERSION="combined-pinyin" ;;
+    tw) VERSION="combined-bpmf" ;;
+    all|traditional-bpmf|combined-bpmf|combined-pinyin) ;;
+    *) echo "不支援的版本：$VERSION" >&2; exit 1 ;;
+esac
+exec python scripts/build.py "$VERSION"

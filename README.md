@@ -62,82 +62,42 @@ Dictionary text font-family/font-size/line-height
 AR UDJingxihei
 ```
 
-## 資料來源
+## 資料來源與收錄規則
 
-本專案使用以下資料與工具：
+- 主來源：教育部《重編國語辭典修訂本》，`data/dict-revised.json`。
+- 輔助來源：兩岸詞典資料，`data/dict-csld.json`；提供繁簡對應與主來源缺少的字。
+- 資料整理專案：[moedict-data](https://github.com/g0v/moedict-data)、[moedict-process](https://github.com/g0v/moedict-process)。
+- 字典打包：[PyGlossary](https://github.com/ilius/pyglossary)。
 
-- 唐鳳的[萌典](https://github.com/g0v/moedict-webkit)
-- 教育部《重編國語辭典修訂本》[資料檔](https://github.com/g0v/moedict-data)
-- 字典格式轉換工具 [PyGlossary](https://github.com/ilius/pyglossary)
+只收錄一個 Unicode 字元的獨立字頭，包含擴充漢字。多字詞可出現在參見的展開內容，
+但不新增為查詢字頭。
 
-原始字典包含單字與詞語；本專案會先篩選出單字資料，再轉換為 Kobo 字典格式。
+1. 純繁體版的所有內容只使用教育部資料。
+2. 繁簡版以教育部內容優先。主字頭下方的 `﹝字﹞` 顯示一簡對多繁的字，
+   且保留各繁體字的完整讀音與釋義。
 
-## 字典整理方式
-
-### 繁體字典
-
-繁體字典由教育部《重編國語辭典修訂本》轉換而成。
-
-處理時會將原始 JSON 轉為 CSV。對於沒有獨立讀音的異體字，程式會從解釋中的「某字的異體字」資訊找出對應正字，再取得該字的讀音。
-
-例如：
-
-```text
-「幾」的異體字。
-```
-
-程式會找出「幾」的所有讀音，並以斜線分隔：
-
-```text
-ㄐㄧ/ㄐㄧˇ
-```
-
-### 繁體＋簡體字典
-
-繁體＋簡體字典由下列資料組成：
-
-- 教育部《重編國語辭典修訂本》
-- 萌典簡體字典
-
-處理流程如下：
-
-1. 將教育部字典分為一般繁體資料與無獨立讀音的異體字資料。
-2. 將異體字資料與萌典簡體資料比對。
-3. 保留只出現在異體字資料中的字。
-4. 以簡體字對應的繁體字和教育部字典比對。
-5. 將缺少的簡體字與對應解釋合併。
-6. 產生注音版與拼音版 Kobo 字典。
-
-查詢「卜」字時，輸出格式大致如下：
-
-```html
-卜,﹝蔔﹞﹝卜﹞
-<font color="#f00">ㄅㄨˇ</font><br>
-[名]<br>
-1. 古人灼燒龜甲或牛骨，辨視其裂紋以推斷事情吉凶的行為。<br>
-2. 泛指一般預測吉凶的方法。<br>
-```
-
-其中 `﹝﹞` 內會顯示對應的繁體字。
+讀音的 `㈠`、`㈡` 依教育部資料「多音排序」顯示，保留 `(一)之又音。`
+等原始說明。
+輔助來源其讀音編號則比照處理。釋義使用點號排序，例句、引文與 link 縮排，其餘異體字說明放在末尾的 `[異體]`。
+完整顯示與引用規則見 [README.spec.md](README.spec.md)。
 
 ## 專案結構
 
 ```text
 kobo-moedict/
-├── dictionary/
-│   ├── tranditional/
-│   │   └── dicthtml-TW.zip    # 教育部字典，繁體注音版
-│   ├── dicthtml-TW.zip        # 繁體＋簡體，注音版
-│   └── dicthtml-CN.zip        # 繁體＋簡體，拼音版
-├── data/                      # 來源
-├── format/                    # 轉換程式
-├── output/                    # 產出                     
-├── DATA_LICENSE.md            # 字典資料授權
-├── THIRD_PARTY_NOTICES.md     # 第三方來源與授權
-├── LICENSE                    # 原創程式碼的 MIT License
-└── README.md
+├── data/             # 兩份辭典、讀音編號對照及其來源紀錄
+├── format/           # 處理邏輯及測試
+├── demo/             # 預覽 Html
+├── scripts/          # 建置、預覽及來源編號提取
+├── output/           # 可重建之資料
+├── dictionary/       # 正式下載檔
+├── requirements.txt
+├── run.sh
+├── README.spec.md
+├── DATA_LICENSE.md
+├── THIRD_PARTY_NOTICES.md
+└── LICENSE
 ```
-
 
 ## 授權
 

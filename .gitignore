@@ -1,1 +1,4 @@
-output/*
+/output/
+__pycache__/
+*.pyc
+*.pending
