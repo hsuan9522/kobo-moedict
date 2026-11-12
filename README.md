@@ -4,18 +4,19 @@
 
 ## 下載字典
 
-### 教育部重編國語辭典
+請前往 [GitHub Releases](https://github.com/hsuan9522/kobo-moedict/releases)，在發布版本的 **Assets（附件）** 中下載需要的字典 ZIP：
 
-- [繁體注音版](https://github.com/hsuan9522/kobo-moedict/blob/master/dictionary/tranditional/dicthtml-TW.zip)
+| 版本             | 收錄內容                     | 讀音顯示 |
+| ---------------- | ---------------------------- | -------- |
+| 純繁體－注音     | 教育部《重編國語辭典修訂本》 | 注音     |
+| 繁體＋簡體－注音 | 教育部為主，兩岸詞典補充     | 注音     |
+| 繁體＋簡體－拼音 | 教育部為主，兩岸詞典補充     | 拼音     |
 
-### 繁體＋簡體字典
-
-- [注音版](https://raw.githubusercontent.com/hsuan9522/kobo-moedict/master/dictionary/dicthtml-TW.zip)
-- [拼音版](https://raw.githubusercontent.com/hsuan9522/kobo-moedict/master/dictionary/dicthtml-CN.zip)
+請下載字典 ZIP，無須下載 **Source code**。
 
 ## 安裝方式
 
-下載字典檔後，將 ZIP 檔放入 Kobo 的下列其中一個目錄：
+下載解壓縮後，將 ZIP 檔放入 Kobo 的下列其中一個目錄：
 
 ```text
 .kobo/dict
@@ -32,7 +33,7 @@
 - `.kobo/dict`：Kobo 預設字典位置，放入同名字典可能會覆蓋原有字典。
 - `.kobo/custom-dict`：自訂字典位置，字典名稱後方會顯示「客製化」。
 
-字典檔名必須符合 Kobo 的命名規則，例如：
+字典檔名若想修改，必須符合 Kobo 的命名規則，例如：
 
 ```text
 dicthtml-xx.zip
@@ -62,6 +63,13 @@ Dictionary text font-family/font-size/line-height
 AR UDJingxihei
 ```
 
+
+## 字典顯示範例
+
+[字典格式預覽]()，可切換純繁體注音、繁簡注音及繁簡拼音三種版本。
+
+範例涵蓋基本排版、繁簡對應、異體字與借音、引用規則及讀音編號；各字上方列有檢查用途。預覽與 Kobo 字典共用同樣的渲染樣式，但瀏覽器的換行、字型與間距可能與 Kobo 實機不同。
+
 ## 資料來源與收錄規則
 
 - 主來源：教育部《重編國語辭典修訂本》，`data/dict-revised.json`。
@@ -90,7 +98,6 @@ kobo-moedict/
 ├── demo/             # 預覽 Html
 ├── scripts/          # 建置、預覽及來源編號提取
 ├── output/           # 可重建之資料
-├── dictionary/       # 正式下載檔
 ├── requirements.txt
 ├── run.sh
 ├── README.spec.md
@@ -104,7 +111,7 @@ kobo-moedict/
 本專案採分離授權：
 
 - `format/` 內的原創轉換程式使用 [MIT License](LICENSE)。
-- `dictionary/` 內的字典內容及產出的字典檔不適用 MIT，仍依原始資料來源的授權條款提供。
+- Releases 提供的字典檔不適用 MIT，仍依原始資料來源的授權條款提供。
 - 教育部《重編國語辭典修訂本》文字資料的著作權仍屬教育部，依 CC BY-ND 3.0 Taiwan 提供。
 - 教育部的授權說明允許格式轉換及後續應用，但不因此將原始文字內容改授權為 MIT。
 - 完整授權範圍、姓名標示與第三方來源請參閱 [DATA_LICENSE.md](DATA_LICENSE.md) 與 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
